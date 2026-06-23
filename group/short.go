@@ -1,3 +1,9 @@
+//go:build !js
+
+// The NIST short-Weierstrass groups (P256/P384/P521) pull crypto/ecdsa,
+// crypto/elliptic, crypto/ecdh, and the nistec field tables. The js/wasm
+// browser target uses only the Ristretto255 group, so this file is excluded
+// there to keep crypto/ecdsa and the nistec tables out of the build.
 package group
 
 import (
